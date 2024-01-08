@@ -60,19 +60,71 @@ Steps for solution:
 
 # 2. Binary Tree
 
+> Note Reference: https://github.com/lexiewangdl/pyalgo?tab=readme-ov-file#2-binary-trees
+
 ## 2.1 Traversal
+
+1. Pre-order traversal / 前序遍历 = 根左右
+   - 通常如果题目对遍历位置不敏感，就用前序遍历，没什么特别的。
+   - 一棵二叉树的前序遍历结果 = 根节点 + 左子树的前序遍历结果 + 右子树的前序遍历结果
+   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
+   - e.g. Quick sort
+2. In-order traversal / 中序遍历 = 左根右
+   - 主要用于Binary search tree (BST)
+   - BST 的中序遍历结果为 *non-decreasing* order
+   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
+   - e.g. Binary search tree
+3. Post-order traversal / 后序遍历 = 左右根
+   - 后续遍历十分特殊，因为 post-order operations have access to information passed up from the children (sub-trees).
+   - 一旦题目和**子树**有关，大概率要给函数设置一个返回值，然后用后续遍历。
+   - Use cases: e.g. merge sort, delete a node from a binary tree, subtree problems
 
 ## 2.2 Divide and Conquer
 
-## 2.3 Depth-first Search (DFS)
+## LeetCode Questions
 
-## 2.4 Breadth-first Search (BFS)
+100.Same Tree (Easy)
 
-## 2.5 BFS vs. DFS
+101.Symmtric Tree (Easy)
 
-# 3. Linked List
+236.Lowest Common Ancestor of a Binary Tree (Medium)
 
-# 4. Two Pointers
+1161.Maximum Level Sum of a Binary Tree (Medium)
 
-# 5. Array
+# 3. DFS (Depth-First Search)
+
+## LeetCode Questions
+
+200.Number of Islands (Medium)
+
+329.Lonegest Increasing Path in a Matrix (Hard)
+
+947.Most Stones Removed with Same Row or Column (Hard)
+
+207.Course Schedule (Medium)
+
+210 Course Schedule II (Medium)
+
+# 4. BFS (Breadth-First Search)
+
+When to use DFS? When to use BFS?
+
+- BFS uses O(w) extra memory, where w is the maximum width of the tree
+  - Maximum width of a binary tree is 2^(h), where *h* is the height of the tree and *h* starts from 0
+  - Worst case: a binary tree is a linked list, then *h* is equal to *N*
+  - Height of a *balanced* tree is O(log N)
+- DFS uses extra space because of the *functional call stack*, O(h) extra space.
+- 如果 tree 是 balanced，那么BFS需要的extra space更多；如果 tree 是 linked list，那么DFS需要的extra space更多。
+- DFS 通常都是 recursive code, use call stack, BFS 通常都是 iterative code, use queue.
+- BFS starts visiting from *root*, DFS starts visiting from *leaves*. 如果你要找的target更接近于root，那么BFS更适合。
+
+## LeetCode Questions
+
+322.Coin Change (Medium)
+
+# 5. Linked List
+
+# 6. Two Pointers
+
+# 7. Array
 
