@@ -93,15 +93,38 @@ Steps for solution:
 
 # 3. DFS (Depth-First Search)
 
+Depth-First Search (DFS) is a versatile algorithm that is commonly used to traverse or search through data structures like graphs and trees. When tackling coding questions that involve DFS, follow these general steps:
+
+1. **Choose Data Structures:**
+   - Identify the appropriate data structures for your problem, such as graphs, trees, or adjacency lists.
+   - Initialize any necessary variables or data structures.
+2. **Visited Nodes:**
+   - Maintain a data structure (e.g., a set or array) to keep track of visited nodes to avoid infinite loops.
+3. **Define Base Cases:**
+   - Clearly define the base cases for your recursion to ensure it terminates correctly.
+   - For example, if you're traversing a tree, a common base case is reaching a leaf node.
+4. **Process Current Node:**
+   - Perform the necessary operations on the current node (or vertex).
+   - Update any relevant information or data structures.
+5. **Explore Neighbors:**
+   - For each unvisited neighbor of the current node, recursively call the DFS function or push it onto the stack.
+   - If using an explicit stack, continue popping and processing nodes until the stack is empty.
+6. **Backtrack (if needed):**
+   - Depending on the problem, you might need to undo certain changes made during the DFS to backtrack and explore other paths.
+7. **Handle Multiple Components (if applicable):**
+   - If the input structure has multiple components (disconnected graphs or trees), make sure to visit all components.
+8. **Optimizations (if needed):**
+   - Depending on the problem, you might need to optimize your solution. This could involve pruning unnecessary branches or using additional data structures.
+
 ## LeetCode Questions
 
-200.Number of Islands (Medium)
+[200.Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/)
 
 329.Lonegest Increasing Path in a Matrix (Hard)
 
 947.Most Stones Removed with Same Row or Column (Hard)
 
-207.Course Schedule (Medium)
+[207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/)
 
 210 Course Schedule II (Medium)
 
