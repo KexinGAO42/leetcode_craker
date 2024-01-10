@@ -58,38 +58,15 @@ Steps for solution:
 
 [213.House robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
 
-# 2. Binary Tree
+# 2. Binary Search
 
 > Note Reference: https://github.com/lexiewangdl/pyalgo?tab=readme-ov-file#2-binary-trees
 
 ## 2.1 Traversal
 
-1. Pre-order traversal / 前序遍历 = 根左右
-   - 通常如果题目对遍历位置不敏感，就用前序遍历，没什么特别的。
-   - 一棵二叉树的前序遍历结果 = 根节点 + 左子树的前序遍历结果 + 右子树的前序遍历结果
-   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
-   - e.g. Quick sort
-2. In-order traversal / 中序遍历 = 左根右
-   - 主要用于Binary search tree (BST)
-   - BST 的中序遍历结果为 *non-decreasing* order
-   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
-   - e.g. Binary search tree
-3. Post-order traversal / 后序遍历 = 左右根
-   - 后续遍历十分特殊，因为 post-order operations have access to information passed up from the children (sub-trees).
-   - 一旦题目和**子树**有关，大概率要给函数设置一个返回值，然后用后续遍历。
-   - Use cases: e.g. merge sort, delete a node from a binary tree, subtree problems
-
 ## 2.2 Divide and Conquer
 
 ## LeetCode Questions
-
-100.Same Tree (Easy)
-
-101.Symmtric Tree (Easy)
-
-236.Lowest Common Ancestor of a Binary Tree (Medium)
-
-1161.Maximum Level Sum of a Binary Tree (Medium)
 
 # 3. DFS (Depth-First Search)
 
@@ -116,17 +93,60 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
 8. **Optimizations (if needed):**
    - Depending on the problem, you might need to optimize your solution. This could involve pruning unnecessary branches or using additional data structures.
 
+DFS in Tree Traversal:
+
+1. Pre-order traversal / 前序遍历 = 根左右
+   - 通常如果题目对遍历位置不敏感，就用前序遍历，没什么特别的。
+   - 一棵二叉树的前序遍历结果 = 根节点 + 左子树的前序遍历结果 + 右子树的前序遍历结果
+   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
+   - e.g. Quick sort
+2. In-order traversal / 中序遍历 = 左根右
+   - 主要用于Binary search tree (BST)
+   - BST 的中序遍历结果为 *non-decreasing* order
+   - Time complexity O(N), space complexity O(h) where *h* is height of tree. If we don't consider call stack, then space complexity is O(1).
+   - e.g. Binary search tree
+3. Post-order traversal / 后序遍历 = 左右根
+   - 后续遍历十分特殊，因为 post-order operations have access to information passed up from the children (sub-trees).
+   - 一旦题目和**子树**有关，大概率要给函数设置一个返回值，然后用后续遍历。
+   - Use cases: e.g. merge sort, delete a node from a binary tree, subtree problems
+
 ## LeetCode Questions
 
-[200.Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/)
+### Tree
 
-329.Lonegest Increasing Path in a Matrix (Hard)
+100.Same Tree (Easy)
 
-947.Most Stones Removed with Same Row or Column (Hard)
+101.Symmtric Tree (Easy)
+
+[104.Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75)
+
+236.Lowest Common Ancestor of a Binary Tree (Medium)
+
+### Graph
 
 [207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/)
 
 210 Course Schedule II (Medium)
+
+[841.Keys and Rooms (Medium)](https://leetcode.com/problems/keys-and-rooms/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[547.Number of Provinces (Medium)](https://leetcode.com/problems/number-of-provinces/?envType=study-plan-v2&envId=leetcode-75)
+
+[1466.Recorder Routes to Make All Paths Lead to the City Zero (Medium)](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/?envType=study-plan-v2&envId=leetcode-75)
+
+Evaluate Division (Medium)
+
+### Matrix
+
+[200.Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/)
+
+[329.Lonegest Increasing Path in a Matrix (Hard)](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/)
+
+947.Most Stones Removed with Same Row or Column (Hard)
+
+### Other
+
+[365.Water and Jugs](https://leetcode.com/problems/water-and-jug-problem/description/)
 
 # 4. BFS (Breadth-First Search)
 
@@ -143,11 +163,31 @@ When to use DFS? When to use BFS?
 
 ## LeetCode Questions
 
+### Tree
+
+Binary Tree Rigth Side View (Medium)
+
+1161.Maximum Level Sum of a Binary Tree (Medium)
+
+### Graph
+
+Nearest Exit from Entraance in Maze (Medium)
+
+Rotting Oranges (Medium)
+
+### Other
+
 322.Coin Change (Medium)
 
 # 5. Linked List
 
-# 6. Two Pointers
+# 6. Array / String
 
-# 7. Array
+## 1. Two Pointers
+
+## 2. Sliding Window
+
+## 3. Prefix Sum
+
+# 
 
