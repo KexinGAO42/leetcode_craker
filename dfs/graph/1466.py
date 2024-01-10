@@ -19,7 +19,6 @@ Explanation: Change the direction of edges show in red such that each node can r
 Example 3:
 Input: n = 3, connections = [[1,0],[2,0]]
 Output: 0
-
 """
 
 from collections import defaultdict
