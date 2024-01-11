@@ -62,10 +62,6 @@ Steps for solution:
 
 > Note Reference: https://github.com/lexiewangdl/pyalgo?tab=readme-ov-file#2-binary-trees
 
-## 2.1 Traversal
-
-## 2.2 Divide and Conquer
-
 ## LeetCode Questions
 
 # 3. DFS (Depth-First Search)
@@ -93,7 +89,11 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
 8. **Optimizations (if needed):**
    - Depending on the problem, you might need to optimize your solution. This could involve pruning unnecessary branches or using additional data structures.
 
-DFS in Tree Traversal:
+Recursion
+
+Explicit stack
+
+## DFS in Binary Tree
 
 1. Pre-order traversal / 前序遍历 = 根左右
    - 通常如果题目对遍历位置不敏感，就用前序遍历，没什么特别的。
@@ -109,6 +109,10 @@ DFS in Tree Traversal:
    - 后续遍历十分特殊，因为 post-order operations have access to information passed up from the children (sub-trees).
    - 一旦题目和**子树**有关，大概率要给函数设置一个返回值，然后用后续遍历。
    - Use cases: e.g. merge sort, delete a node from a binary tree, subtree problems
+
+## DFS in Graphs
+
+## DFS in Matrix
 
 ## LeetCode Questions
 
@@ -140,13 +144,15 @@ Evaluate Division (Medium)
 
 [200.Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/)
 
+[130.Surrounded Regions (Medium)](https://leetcode.com/problems/surrounded-regions/description/?envType=study-plan-v2&envId=top-interview-150)
+
 [329.Lonegest Increasing Path in a Matrix (Hard)](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/)
 
 947.Most Stones Removed with Same Row or Column (Hard)
 
 ### Other
 
-[365.Water and Jugs](https://leetcode.com/problems/water-and-jug-problem/description/)
+[365.Water and Jugs (Medium)](https://leetcode.com/problems/water-and-jug-problem/description/)
 
 # 4. BFS (Breadth-First Search)
 
