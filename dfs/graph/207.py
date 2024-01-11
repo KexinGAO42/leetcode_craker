@@ -23,40 +23,48 @@ class Solution:
         input: int; list of lists
         output: boolean
 
-        intuition: the prereqs can form a directed graph; if there is a loop, return False, else True
+        Intuition: the prereqs can form a directed graph; if there is a loop in the graph, we cannot finish all courses
+        !! The way to find a cycle:
+        we give a course 3 status: not visited; visited; being visited
+        data structure - list of len(numCourses) 0 not visited; 1 visited, -1 being visited
 
         data structure - graph: dict[prereq] = [courses]
         dfs:
         - target: find a loop
-        - input: starting node; visited set; resolved set
+        - input: starting node; visited list; resolved set
         """
 
-        # Represent the courses and prerequisites using a graph (adjacency list)
+        # S1: Represent the courses and prerequisites using a graph (adjacency list)
         graph = [[] for _ in range(numCourses)]
         for prerequisite in prerequisites:
             course, pre = prerequisite
             graph[course].append(pre)
 
-        visited = [0] * numCourses  # 0: not visited, 1: visited, -1: being visited
+        visited = [0 for i in range(numCourses)]
 
-        def hasCycle(course):
-            if visited[course] == -1:
-                return True  # Cycle detected
-            if visited[course] == 1:
-                return False  # Already visited, no cycle
-
-            visited[course] = -1  # Mark as being visited
-
+        # S2: Define dfs
+        def dfs(course):
+            # define base cases:
+            if visited[course] == -1:  # The course is being visited in the dfs
+                return True
+            if visited[course] == 1:  # The course is already visited and there is no cycle
+                return False
+            # !! process current node: before we go into deeper dfs, mark as being visited
+            visited[course] = -1
+            # process neighbors
             for pre in graph[course]:
-                if hasCycle(pre):
+                if dfs(pre):
                     return True  # Cycle detected in the subtree
-
+            # !! process current node: after we get out from dfs, mark as visited
             visited[course] = 1  # Mark as visited
             return False
 
-        # Check for cycles in the graph
+        # S3: define main function
         for course in range(numCourses):
-            if not visited[course] and hasCycle(course):
+            if not visited[course] and dfs(course):
                 return False  # Cycle detected, cannot finish all courses
 
         return True  # No cycle detected, can finish all courses
+
+
+
