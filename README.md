@@ -22,7 +22,7 @@ When there comes a DP problem:
 Steps for solution:
 
 1. Define the state variables
-2. Define the memo array (depending on the state variables)
+2. Define the dp array (depending on the state variables)
 3. Define the initial values
 4. Define the state transition functions (trickest part)
 
@@ -68,30 +68,33 @@ Steps for solution:
 
 Depth-First Search (DFS) is a versatile algorithm that is commonly used to traverse or search through data structures like graphs and trees. When tackling coding questions that involve DFS, follow these general steps:
 
-1. **Choose Data Structures:**
-   - Identify the appropriate data structures for your problem, such as graphs, trees, or adjacency lists.
-   - Initialize any necessary variables or data structures.
-2. **Visited Nodes:**
-   - Maintain a data structure (e.g., a set or array) to keep track of visited nodes to avoid infinite loops.
-3. **Define Base Cases:**
-   - Clearly define the base cases for your recursion to ensure it terminates correctly.
-   - For example, if you're traversing a tree, a common base case is reaching a leaf node.
-4. **Process Current Node:**
-   - Perform the necessary operations on the current node (or vertex).
-   - Update any relevant information or data structures.
-5. **Explore Neighbors:**
-   - For each unvisited neighbor of the current node, recursively call the DFS function or push it onto the stack.
-   - If using an explicit stack, continue popping and processing nodes until the stack is empty.
-6. **Backtrack (if needed):**
+1. **Define data structures and necessary variables:**
+   - Tree (comes with the problem)
+   - Matrix (comes with the problem)
+   - Graph (use dictionary or adjacency lists to build)
+2. **Keep track of visited nodes to avoid infinite loops:**
+   - Set: if we only need to track one node is visited or not (two status)
+   - List: if we need to track one node is visited (1), not visited (0) and being visited in current dfs (-1) (three status)
+     - e.g. find a cycle in the graph [207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/); [210 Course Schedule II (Medium)](https://leetcode.com/problems/course-schedule-ii/description/)
+   - Binary tree doesn't need visited trackoį-0p∏¸
+3. **Define main function to ensure what we want our dfs do:**
+   - If the input structure has multiple components (disconnected graphs or trees, diffrent grid in matrix), make sure to visit all components.
+4. **Define base cases to ensure the recursion terminates correctly:**
+   - Tree: reaching a leaf node.
+   - Matrix: getting out of the matrix or visited
+   - Graph: visited
+5. **Process Current Node:**
+   - Perform the necessary operations on the current node, update any relevant information or data structures.
+   - (tricky) Sometimes we also need to process current node after dfs the neighbors
+     - e.g. [207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/); [210 Course Schedule II (Medium)](https://leetcode.com/problems/course-schedule-ii/description/)
+6. **Explore Neighbors:**
+   - Tree: visit left child and right child
+   - Matrix: visit adjacent cells in for directions
+   - Graph: visit nodes directed by current node
+7. **Backtrack (if needed):**
    - Depending on the problem, you might need to undo certain changes made during the DFS to backtrack and explore other paths.
-7. **Handle Multiple Components (if applicable):**
-   - If the input structure has multiple components (disconnected graphs or trees), make sure to visit all components.
 8. **Optimizations (if needed):**
    - Depending on the problem, you might need to optimize your solution. This could involve pruning unnecessary branches or using additional data structures.
-
-Recursion
-
-Explicit stack
 
 ## DFS in Binary Tree
 
@@ -126,11 +129,17 @@ Explicit stack
 
 236.Lowest Common Ancestor of a Binary Tree (Medium)
 
+[1448.Count Goodd Nodes in Binary Tree (Medium)](https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[437.Path Sum III (Medium)](https://leetcode.com/problems/path-sum-iii/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[1372.Longest ZigZag Path in a Binary Tree (Medium)](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75)
+
 ### Graph
 
 [207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/)
 
-210 Course Schedule II (Medium)
+[210 Course Schedule II (Medium)](https://leetcode.com/problems/course-schedule-ii/description/)
 
 [841.Keys and Rooms (Medium)](https://leetcode.com/problems/keys-and-rooms/description/?envType=study-plan-v2&envId=leetcode-75)
 
