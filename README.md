@@ -180,39 +180,41 @@ BFS algorithms start from a source node and visits all its neighbors before movi
 
 ## Pseudo Code
 
-`from collections import deque` 
+```python
+from collections import deque
 
-​	`def bfs(graph, start_node):`    
+​	def bfs(graph, start_node):    
 
-​		`# Initialize a queue for BFS`    
+​		# Initialize a queue for BFS   
 
-​		`queue = deque([start_node])`        
+​		queue = deque([start_node])     
 
-​		`# Mark the start node as visited    `
+​		# Mark the start node as visited
 
-​		`visited = set([start_node])     `
+​		visited = set([start_node])
 
-​		`while queue:        `
+​		while queue:
 
-​			`# Dequeue a node from the front of the queue        `
+​			# Dequeue a node from the front of the queue
 
-​			`current_node = queue.popleft()         `
+​			current_node = queue.popleft()
 
-​			`# Process the current node (e.g., print, store, or manipulate data)         `
+​			# Process the current node (e.g., print, store, or manipulate data)
 
-​			`# Enqueue unvisited neighbors        `
+​			# Enqueue unvisited neighbors
 
-​			`for neighbor in graph[current_node]:            `
+​			for neighbor in graph[current_node]:
 
-​				`if neighbor not in visited:                `
+​				if neighbor not in visited:
 
-​					`# Mark the neighbor as visited                `
+​					# Mark the neighbor as visited
 
-​					`visited.add(neighbor)                `
+​					visited.add(neighbor)
 
-​					`# Enqueue the neighbor                `
+​					# Enqueue the neighbor 
 
-​					`queue.append(neighbor)`
+​					queue.append(neighbor)
+```
 
 ## When to use DFS? When to use BFS?
 
