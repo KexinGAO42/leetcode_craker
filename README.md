@@ -62,8 +62,6 @@ Steps for solution:
 
 # 2. Binary Search
 
-> Note Reference: https://github.com/lexiewangdl/pyalgo?tab=readme-ov-file#2-binary-trees
-
 ## LeetCode Questions
 
 # 3. DFS (Depth-First Search)
@@ -167,16 +165,68 @@ Evaluate Division (Medium)
 
 # 4. BFS (Breadth-First Search)
 
-When to use DFS? When to use BFS?
+BFS algorithms start from a source node and visits all its neighbors before moving on to the next level of neighbors. BFS guarantees that it visits nodes in increasing order of their distance from the source node. BFS is often used to find the shortest path in an unweighted graph.
 
-- BFS uses O(w) extra memory, where w is the maximum width of the tree
-  - Maximum width of a binary tree is 2^(h), where *h* is the height of the tree and *h* starts from 0
-  - Worst case: a binary tree is a linked list, then *h* is equal to *N*
-  - Height of a *balanced* tree is O(log N)
-- DFS uses extra space because of the *functional call stack*, O(h) extra space.
-- 如果 tree 是 balanced，那么BFS需要的extra space更多；如果 tree 是 linked list，那么DFS需要的extra space更多。
-- DFS 通常都是 recursive code, use call stack, BFS 通常都是 iterative code, use queue.
-- BFS starts visiting from *root*, DFS starts visiting from *leaves*. 如果你要找的target更接近于root，那么BFS更适合。
+1. **Start from a Source Node**
+2. **Enqueue the Source Node:** Add the source node to a queue (First In First Out) data structure.
+   - Use the deque methods from collections
+3. **Mark the Source Node as Visited**
+4. **While the Queue is Not Empty**
+   - Dequeue a node from the front of the queue.
+   - Visit and process the dequeued node.
+   - Enqueue all unvisited neighbors of the dequeued node.
+5. **Repeat Until the Queue is Empty:** Continue the process until the queue becomes empty. This ensures that all reachable nodes are visited.
+6. **Check for Unvisited Nodes:** After the BFS is complete, check if there are any unvisited nodes. If yes, repeat the process for those nodes to cover the entire graph.
+
+## Pseudo Code
+
+`from collections import deque` 
+
+​	`def bfs(graph, start_node):`    
+
+​		`# Initialize a queue for BFS`    
+
+​		`queue = deque([start_node])`        
+
+​		`# Mark the start node as visited    `
+
+​		`visited = set([start_node])     `
+
+​		`while queue:        `
+
+​			`# Dequeue a node from the front of the queue        `
+
+​			`current_node = queue.popleft()         `
+
+​			`# Process the current node (e.g., print, store, or manipulate data)         `
+
+​			`# Enqueue unvisited neighbors        `
+
+​			`for neighbor in graph[current_node]:            `
+
+​				`if neighbor not in visited:                `
+
+​					`# Mark the neighbor as visited                `
+
+​					`visited.add(neighbor)                `
+
+​					`# Enqueue the neighbor                `
+
+​					`queue.append(neighbor)`
+
+## When to use DFS? When to use BFS?
+
+- Space Complecity:
+  - BFS uses O(w) extra space, where w is the maximum width of the tree
+    - Maximum width of a binary tree is 2^(h), where *h* is the height of the tree and *h* starts from 0
+    - Worst case: when a binary tree is a linked list (only one branch), then *h* is equal to *N*
+    - *h* of a *balanced* tree is O(log N)
+  - DFS uses O(h) extra space because of the *functional call stack*
+  - If a tree is balanced, then BFS requires more space；if a tree is a linked list，then DFS needs more space
+- Time Complexity: The time complexity for both DFS and BFS is essentially the same ( **O(V + E)**, where V is the number of vertices and E is the number of edges ), but the choice depends on the specific problem requirements and the nature of the graph.
+
+- Use **DFS** when memory is a concern, and you want to explore deep into the graph.
+- Use **BFS** when finding the shortest path or exploring the graph level by level is important.
 
 ## LeetCode Questions
 
@@ -190,7 +240,7 @@ Binary Tree Rigth Side View (Medium)
 
 Nearest Exit from Entraance in Maze (Medium)
 
-Rotting Oranges (Medium)
+[994.Rotting Oranges (Medium)](https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75)
 
 ### Other
 
@@ -204,7 +254,5 @@ Rotting Oranges (Medium)
 
 ## 2. Sliding Window
 
-## 3. Prefix Sum
-
-# 
+## 3. Prefix Sum 
 
