@@ -13,6 +13,8 @@ When to use DP to solve:
 2. 无后效性。即子问题的解一旦确定，就不再改变，不受在这之后、包含它的更大的问题的求解决策影响。
 3. 最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质（即满足最优化原理）。
 
+Fibbonacci number is a perfect and simple example.
+
 When there comes a DP problem:
 
 1. What is the method for bruteforce searching?
