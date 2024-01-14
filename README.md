@@ -48,7 +48,7 @@ Steps for solution:
 
 5.Longest palindromic substring (Medium)
 
-72.Edit distance (Medium)
+[72.Edit distance (Medium)](https://leetcode.com/problems/edit-distance/description/?envType=study-plan-v2&envId=leetcode-75)
 
 139.Word break (Medium) Tiktok
 
@@ -245,6 +245,8 @@ Nearest Exit from Entraance in Maze (Medium)
 [994.Rotting Oranges (Medium)](https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75)
 
 ### Other
+
+[127.Word Ladder (Hard)](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
 
 322.Coin Change (Medium)
 
