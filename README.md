@@ -147,7 +147,7 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
 
 [1466.Recorder Routes to Make All Paths Lead to the City Zero (Medium)](https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/?envType=study-plan-v2&envId=leetcode-75)
 
-Evaluate Division (Medium)
+[399.Evaluate Division (Medium) (A bit hard actually)](https://leetcode.com/problems/evaluate-division/description/?envType=study-plan-v2&envId=leetcode-75)
 
 ### Matrix
 
@@ -246,7 +246,7 @@ Nearest Exit from Entraance in Maze (Medium)
 
 ### Other
 
-[127.Word Ladder (Hard)](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
+[127.Word Ladder (Hard) Tiktok](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
 
 322.Coin Change (Medium)
 
