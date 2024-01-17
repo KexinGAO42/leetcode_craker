@@ -62,7 +62,47 @@ Steps for solution:
 
 # 2. Binary Search
 
+When to use Binary Search:
+
+1. In the simplest case, when we have a sorted array, and we want to find a target value in it, we can use Binary Search.
+   - e.g. [374.Guess Number Higher or Lower (Easy)](https://leetcode.com/problems/guess-number-higher-or-lower/description/?envType=study-plan-v2&envId=leetcode-75)
+2. **In the general case**: if we can define a function (if condition) that map elements in left half to True and the other half to False or vice versa, we can use Binary Search.
+   - e.g. [33.Search in Rotated Array (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/); [162.Find Peak Element (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+
+Steps for solving Binary Search question:
+
+1. Initialize left and right pointers (the first index and last index of the sequence)
+2. Use a while loop to continue the search until the low pointer is less than or equal to the high pointer
+3. Calculate the mid point.
+   - Use `mid = left + (right - left) // 2` rather than `mid = (right + left) // 2`. The latter one might cause overflow while the former one will never. For example, in C++ and Javaa, int type fits values up to around 2^31, if two such values are added, the sum will overflow.
+4. Update the two pointers to find the target.
+
+## Complexity
+
+TC: `O(log n)`
+
+## Pseudo Code
+
+```python
+l, r = 0, n - 1
+while l <= r:
+  mid = l + (r - l) // 2
+  if array[mid] == target:
+    return mid
+  if array[mid] < target:  # the target is in the right part of the array
+    l = mid + 1  # update left bound
+  else:  # the target is in the left part of the array
+    r = mid - 1  # update right bound
+return -1
+```
+
 ## LeetCode Questions
+
+[374.Guess Number Higher or Lower (Easy)](https://leetcode.com/problems/guess-number-higher-or-lower/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[33.Search in Rotated Array (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+
+[162.Find Peak Element (Medium)](
 
 # 3. DFS (Depth-First Search)
 
