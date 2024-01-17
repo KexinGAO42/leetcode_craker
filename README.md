@@ -102,7 +102,7 @@ return -1
 
 [33.Search in Rotated Array (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 
-[162.Find Peak Element (Medium)](
+[162.Find Peak Element (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 
 # 3. DFS (Depth-First Search)
 
