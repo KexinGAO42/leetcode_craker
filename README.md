@@ -104,6 +104,10 @@ return -1
 
 [162.Find Peak Element (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 
+[2300.Successful Pairs of Spells and Potions (Medium)](https://leetcode.com/problems/successful-pairs-of-spells-and-potions/)
+
+[875.Koko Eating Bananas (Medium)](https://leetcode.com/problems/koko-eating-bananas/)
+
 # 3. DFS (Depth-First Search)
 
 Depth-First Search (DFS) is a versatile algorithm that is commonly used to traverse or search through data structures like graphs and trees. When tackling coding questions that involve DFS, follow these general steps:
@@ -116,7 +120,7 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
    - Set: if we only need to track one node is visited or not (two status)
    - List: if we need to track one node is visited (1), not visited (0) and being visited in current dfs (-1) (three status)
      - e.g. find a cycle in the graph [207.Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/); [210 Course Schedule II (Medium)](https://leetcode.com/problems/course-schedule-ii/description/)
-   - Binary tree doesn't need visited trackoį-0p∏¸
+   - Binary tree doesn't need visited track
 3. **Define main function to ensure what we want our dfs do:**
    - If the input structure has multiple components (disconnected graphs or trees, diffrent grid in matrix), make sure to visit all components.
 4. **Define base cases to ensure the recursion terminates correctly:**
