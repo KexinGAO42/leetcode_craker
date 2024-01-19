@@ -121,10 +121,9 @@ Key operations:
 
 1. Insertion:
    - 
-2. Deletion: three cases to consider:
-   - Node with no children: Simply remove the node.
+2. Deletion: [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
    - Node with one child: Replace the node with its child.
-   - Node with two children: Find the node's in-order successor (or predecessor), replace the node's key with the successor's (or predecessor's) key, and recursively delete the successor (or predecessor).
+   - Node with two children: find the minimum value in the right tree (keep traversing left), recursively delete the right child.
 
 # 3. DFS (Depth-First Search)
 
