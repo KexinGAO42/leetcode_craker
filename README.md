@@ -68,6 +68,7 @@ When to use Binary Search:
    - e.g. [374.Guess Number Higher or Lower (Easy)](https://leetcode.com/problems/guess-number-higher-or-lower/description/?envType=study-plan-v2&envId=leetcode-75)
 2. **In the general case**: if we can define a function (if condition) that map elements in left half to True and the other half to False or vice versa, we can use Binary Search.
    - e.g. [33.Search in Rotated Array (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/); [162.Find Peak Element (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+3. If the question ask you to search a target with logarithmic TC, it's highly possible to be a binary search question.
 
 Steps for solving Binary Search question:
 
@@ -107,6 +108,23 @@ return -1
 [2300.Successful Pairs of Spells and Potions (Medium)](https://leetcode.com/problems/successful-pairs-of-spells-and-potions/)
 
 [875.Koko Eating Bananas (Medium)](https://leetcode.com/problems/koko-eating-bananas/)
+
+[4.Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+
+## Binary Search Tree (BST)
+
+Definition of BST: In a BST, the left subtree of a node contains only nodes with keys less than the node's key, and the right subtree contains only nodes with keys greater than the node's key.
+
+The reason we need a data structure as BST is that, to perform deletion and insertion in a sorted array requires TC of `O(n)`, whereas in BST, the operations requires TC of `O(log n)`.
+
+Key operations:
+
+1. Insertion:
+   - 
+2. Deletion: three cases to consider:
+   - Node with no children: Simply remove the node.
+   - Node with one child: Replace the node with its child.
+   - Node with two children: Find the node's in-order successor (or predecessor), replace the node's key with the successor's (or predecessor's) key, and recursively delete the successor (or predecessor).
 
 # 3. DFS (Depth-First Search)
 
@@ -302,5 +320,5 @@ Nearest Exit from Entraance in Maze (Medium)
 
 ## 2. Sliding Window
 
-## 3. Prefix Sum 
+## 3. Prefix Sum
 
