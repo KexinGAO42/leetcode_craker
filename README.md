@@ -308,11 +308,15 @@ Binary Tree Rigth Side View (Medium)
 
 [994.Rotting Oranges (Medium)](https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75)
 
+[286. Walls and Gates (Medium)](https://leetcode.com/problems/walls-and-gates/)
+
+[934. Shortest Bridge](https://leetcode.com/problems/shortest-bridge/)
+
 ### Other
 
 [127.Word Ladder (Hard) Tiktok](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
 
-322.Coin Change (Medium)
+[322.Coin Change (Medium)]([322. Coin Change](https://leetcode.com/problems/coin-change/))
 
 # 5. Linked List
 
@@ -321,6 +325,12 @@ Binary Tree Rigth Side View (Medium)
 ## 1. Two Pointers
 
 ## 2. Sliding Window
+
+In any sliding window based problem we have two pointers. One right pointer whose job is to expand the current window and then we have the left pointer whose job is to contract a given window. At any point in time only one of these pointers move and the other one remains fixed.
+
+### LeetCode Questions
+
+[1004. Max Consecutive Ones III (Medium)](https://leetcode.com/problems/max-consecutive-ones-iii/)
 
 ## 3. Prefix Sum
 
