@@ -232,10 +232,13 @@ BFS algorithms start from a source node and visits all its neighbors before movi
 2. **Enqueue the Source Node:** Add the source node to a queue (First In First Out) data structure.
    - Use the deque methods from collections
 3. **Mark the Source Node as Visited**
+   - Use `set()` to keep track of visited node
+   - In some cases, we can directly modify the cell to mark it as visited
 4. **While the Queue is Not Empty**
    - Dequeue a node from the front of the queue.
    - Visit and process the dequeued node.
    - Enqueue all unvisited neighbors of the dequeued node.
+   - In some cases, we want a for loop inside the while loop so that we finish processing all node at this level
 5. **Repeat Until the Queue is Empty:** Continue the process until the queue becomes empty. This ensures that all reachable nodes are visited.
 6. **Check for Unvisited Nodes:** After the BFS is complete, check if there are any unvisited nodes. If yes, repeat the process for those nodes to cover the entire graph.
 
@@ -301,7 +304,7 @@ Binary Tree Rigth Side View (Medium)
 
 ### Graph
 
-Nearest Exit from Entraance in Maze (Medium)
+[1926. Nearest Exit from Entrance in Maze (Medium)](https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/)
 
 [994.Rotting Oranges (Medium)](https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75)
 
@@ -320,4 +323,33 @@ Nearest Exit from Entraance in Maze (Medium)
 ## 2. Sliding Window
 
 ## 3. Prefix Sum
+
+When to use Prefix Sum:
+
+1. Subarray Sum or Range Queries:
+   - If the problem involves finding the sum of elements in a subarray or handling range queries (queries about subarray sums), prefix sum is often a good choice. It allows you to calculate subarray sums efficiently.
+2. Cumulative Operations:
+   - If the problem involves cumulative operations on an array, such as finding the running sum or cumulative frequency, prefix sum can simplify and optimize these calculations.
+3. Optimizing Time Complexity:
+   - If the problem can be solved with a time complexity of O(N) or better using prefix sum, it might be a suitable approach. Prefix sum allows you to perform certain calculations in constant time, improving overall efficiency.
+4. Reduction to a Known Problem:
+   - If the problem can be reduced to a known problem that involves subarray sums or cumulative operations, consider using prefix sum as a tool to solve the problem efficiently.
+5. Avoiding Repeated Calculations:
+   - If there are repeated calculations of cumulative sums or subarray sums, using a prefix sum array can help avoid redundant computations and improve performance.
+6. Requirements Involving Differences:
+   - If the problem involves finding the difference between two subarray sums or handling queries related to differences between elements, prefix sum can be useful.
+
+Complexity:
+
+TC: `O(N)`
+
+SC: `O(N)` when we need an array to store the prefix sums / `O(1)` when we only need a running sum
+
+### LeetCode Questions
+
+[560. Subarray Sum Equals K (Medium)](https://leetcode.com/problems/subarray-sum-equals-k/)
+
+[2483. Minimum Penalty for a Shop (Medium)](https://leetcode.com/problems/minimum-penalty-for-a-shop/)
+
+
 
