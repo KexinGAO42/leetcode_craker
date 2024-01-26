@@ -326,11 +326,33 @@ Binary Tree Rigth Side View (Medium)
 
 ## 2. Sliding Window
 
-In any sliding window based problem we have two pointers. One right pointer whose job is to expand the current window and then we have the left pointer whose job is to contract a given window. At any point in time only one of these pointers move and the other one remains fixed.
+Common scenarios for using Sliding Window: finding the maximum/minimum subarray, longest substring with distinct characters, or a subarray with a given sum.
+
+Common constraints: some problems have specific conditions or restrictions on the **window size** or **elements inside the window**.
+
+How to Slide the Window:
+
+Set up variables to represent the window **(left and right pointers)** and any other necessary information.
+
+- every SW problem needs left and right pointers to represent the window
+- if the window size is fixed as `k`:
+  - `left, right = 0, k - 1` (use `for i in range(k)` to traverse the first window)
+  - for sliding the window, use `for i in range(k, len(arr))`, where `left, right = i - k, i`
+- if the window size is not fixed, and the constraints are on the elements inside the window:
+  - `left, right = 0, 0`
+  - `for right in range(len(arr))`, update left according to the constraint
 
 ### LeetCode Questions
 
-[1004. Max Consecutive Ones III (Medium)](https://leetcode.com/problems/max-consecutive-ones-iii/)
+##### Fixed window size
+
+[456. Maximum Number of Vowels in a Substring of Given Length](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/)
+
+##### Other constraints
+
+[1004. Max Consecutive Ones III (Medium)](https://leetcode.com/problems/max-consecutive-ones-iii/) Similar question: [1493. Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
+
+
 
 ## 3. Prefix Sum
 
