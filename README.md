@@ -50,6 +50,8 @@ Steps for solution:
 
 [72.Edit distance (Medium)](https://leetcode.com/problems/edit-distance/description/?envType=study-plan-v2&envId=leetcode-75)
 
+[1143. Longest Common Subsequence (Medium)](https://leetcode.com/problems/longest-common-subsequence/)
+
 139.Word break (Medium) Tiktok
 
 140.Word break II (Hard)
@@ -320,9 +322,106 @@ Binary Tree Rigth Side View (Medium)
 
 # 5. Linked List
 
+## Code template
+
+1. Basic operations: insertion, deletion, traversal
+
+```python
+# Insert node c (head -> b, head -> c -> b)
+c.next = head.next
+head.next = c
+
+# Delete node c (head -> c -> b, head -> b)
+head.next = head.next.next
+
+# Traverse linked list
+while head:
+  head = head.next
+```
+
+2. Reverse linked list
+
+```python
+curr = head
+prev = None
+while curr:
+  nxt = curr.next
+  curr.next = prev
+  prev = curr
+  curr = nxt
+```
+
+3. Dummy head
+
+```python
+dummy.next = head
+while head:
+  # operations of delete, insert...
+  head = head.next
+return dummy.head
+```
+
+4. Slow and fast pointers
+
+This method is usually used in problems which require: a) finding a middle node in a linked list; b) detecting a cycle in a linked list
+
+## LeetCode Questions
+
+### Reverse Linked List
+
+[25. Reverse Nodes in k-Group (Hard)](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+
+### Slow and Fast Pointers
+
+[2095. Delete the Middle Node of a Linked List (Medium)](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/)
+
+[142. Linked List Cycle II (Medium)](https://leetcode.com/problems/linked-list-cycle-ii/)
+
 # 6. Array / String
 
 ## 1. Two Pointers
+
+Why do we want to use Two Pointers:
+
+When we want to search for two elements from an array, the brute force solution could lead to nested loops. Two pointers can often solve problems in linear or linearithmic time.
+
+Types of Two Pointers:
+
+1. Left and right pointers: the pointers are initialized at the beginning and the end of the array; both pointers move towards the middle
+
+   - In this case, we don't care about the elments between the two pointers
+
+   Code template:
+
+   ```python
+   def template(array):
+   	left, right = 0, len(array) - 1
+     
+     while left < right:
+       if ...:
+          left += 1
+       if ...:
+          right -= 1
+   ```
+
+2. Slow and fast pointers: the pointers are initialized at the beginning of the array; the fast pointer moves along the array by for loop, while the slow pointer moves only under certain conditions; for each loop, check the subarray [slow : fast] to see whether it meets certain condition
+
+   - In this case, we DO care about the elments between the two pointers
+   - Subtypes:
+     - Remove duplicates
+     - Sliding Window
+
+   
+
+### LeetCode Questions
+
+#### Left and right pointers
+
+[11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
+
+#### Slow and fast pointers
+
+
 
 ## 2. Sliding Window
 
@@ -352,6 +451,8 @@ Set up variables to represent the window **(left and right pointers)** and any o
 
 [1004. Max Consecutive Ones III (Medium)](https://leetcode.com/problems/max-consecutive-ones-iii/) Similar question: [1493. Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
 
+[76. Minimum Window Substring (Hard)](https://leetcode.com/problems/minimum-window-substring/)
+
 
 
 ## 3. Prefix Sum
@@ -379,9 +480,6 @@ SC: `O(N)` when we need an array to store the prefix sums / `O(1)` when we only 
 
 ### LeetCode Questions
 
-[560. Subarray Sum Equals K (Medium)](https://leetcode.com/problems/subarray-sum-equals-k/)
+[560. Subarray Sum Equals K (Medium)](https://leetcode.com/problems/subarray-sum-equals-k/) (Combine with Sliding Window)
 
 [2483. Minimum Penalty for a Shop (Medium)](https://leetcode.com/problems/minimum-penalty-for-a-shop/)
-
-
-
