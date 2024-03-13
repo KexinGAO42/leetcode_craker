@@ -75,7 +75,7 @@ Steps for solution:
 
 [97. Interleaving String (Medium)](https://leetcode.com/problems/interleaving-string/)
 
-139.Word break (Medium) Tiktok
+[139. Word Break (Medium)](https://leetcode.com/problems/word-break/) (very tricky) Tiktok
 
 140.Word break II (Hard)
 
