@@ -5,15 +5,13 @@ This is a project tackling Leetcode questions for tech interview. Solutions come
 
 AKA: Recursion with Memorization 记忆化搜索 / Pruning 剪枝
 
-Main idea: increase space complexity to reduce time complexity. 空间换时间。 Save the intermediate calculation results with memo hashmap to avoid calculating same thing for several times.
+Main idea: increase space complexity to reduce time complexity. Save the intermediate calculation results with memo hashmap to avoid calculating same thing for several times. (Fibbonacci number is a perfect and simple example.)
 
-When to use DP to solve:
+Properties of DP problems:
 
 1. 子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题进行求解时，每次产生的子问题并不总是新问题，有些子问题会被重复计算多次。
 2. 无后效性。即子问题的解一旦确定，就不再改变，不受在这之后、包含它的更大的问题的求解决策影响。
 3. 最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质（即满足最优化原理）。
-
-Fibbonacci number is a perfect and simple example.
 
 When there comes a DP problem:
 
@@ -23,10 +21,25 @@ When there comes a DP problem:
 
 Steps for solution:
 
-1. Define the state variables
-2. Define the dp array (depending on the state variables)
-3. Define the initial values
-4. Define the state transition functions (trickest part)
+1. Consider edge cases (optional)
+
+2. Define the state variables (optional)
+
+3. Define the dp array (depending on the state variables)
+
+   1. a single or several variants - O(1) extra space
+   2. a 1D array - O(N) extra space
+   3. a multi-dimensional array - O(N^2) extra space
+
+     Note: We may always think about whether we could reduce the size of dp (if the previous solutions no longer neccesary after they have been used) 
+
+4. Define the initial values
+
+   1. Matrix:
+      1. the top-left / bottom-right corner be the same as the original matrix
+      2. the first row and column be the same as the original matrix
+
+5. Define the state transition functions (trickest part)
 
 ## LeetCode questions
 
@@ -44,23 +57,39 @@ Steps for solution:
 
 [714.Best time to buy and sell stock with transaction fee (Medium)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
-### String
-
-5.Longest palindromic substring (Medium)
-
-[72.Edit distance (Medium)](https://leetcode.com/problems/edit-distance/description/?envType=study-plan-v2&envId=leetcode-75)
-
-[1143. Longest Common Subsequence (Medium)](https://leetcode.com/problems/longest-common-subsequence/)
-
-139.Word break (Medium) Tiktok
-
-140.Word break II (Hard)
-
 ### House Robber
 
 [198.House robber (Medium)](https://leetcode.com/problems/house-robber/)
 
 [213.House robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
+
+### String
+
+#### Multi-dimensional DP
+
+[5.Longest palindromic substring (Medium)](https://leetcode.com/problems/longest-palindromic-substring/description/)
+
+[72.Edit distance (Medium)](https://leetcode.com/problems/edit-distance/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[1143. Longest Common Subsequence (Medium)](https://leetcode.com/problems/longest-common-subsequence/)
+
+[97. Interleaving String (Medium)](https://leetcode.com/problems/interleaving-string/)
+
+139.Word break (Medium) Tiktok
+
+140.Word break II (Hard)
+
+### Matrix (Multi-dimensional)
+
+#### Bottom-up
+
+[64. Minimum Path Sum (Medium)](https://leetcode.com/problems/minimum-path-sum/)
+
+[120. Triangle  (Medium)](https://leetcode.com/problems/triangle/)
+
+#### Top-down
+
+[221. Maximal Square (Medium)](https://leetcode.com/problems/maximal-square/)
 
 # 2. Binary Search
 
@@ -314,6 +343,8 @@ Binary Tree Rigth Side View (Medium)
 
 [934. Shortest Bridge](https://leetcode.com/problems/shortest-bridge/)
 
+1293.Shortest Path in a Grid with Obstacles Elimination (Hard)
+
 ### Other
 
 [127.Word Ladder (Hard) Tiktok](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
@@ -421,8 +452,6 @@ Types of Two Pointers:
 
 #### Slow and fast pointers
 
-
-
 ## 2. Sliding Window
 
 Common scenarios for using Sliding Window: finding the maximum/minimum subarray, longest substring with distinct characters, or a subarray with a given sum.
@@ -453,8 +482,6 @@ Set up variables to represent the window **(left and right pointers)** and any o
 
 [76. Minimum Window Substring (Hard)](https://leetcode.com/problems/minimum-window-substring/)
 
-
-
 ## 3. Prefix Sum
 
 When to use Prefix Sum:
@@ -483,3 +510,9 @@ SC: `O(N)` when we need an array to store the prefix sums / `O(1)` when we only 
 [560. Subarray Sum Equals K (Medium)](https://leetcode.com/problems/subarray-sum-equals-k/) (Combine with Sliding Window)
 
 [2483. Minimum Penalty for a Shop (Medium)](https://leetcode.com/problems/minimum-penalty-for-a-shop/)
+
+# 7. Queue / Stack
+
+## 1. Heap / Priority Queue
+
+## 2. Monotonic Stack
