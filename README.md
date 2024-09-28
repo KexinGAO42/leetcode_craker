@@ -148,13 +148,20 @@ Definition of BST: In a BST, the left subtree of a node contains only nodes with
 
 The reason we need a data structure as BST is that, to perform deletion and insertion in a sorted array requires TC of `O(n)`, whereas in BST, the operations requires TC of `O(log n)`.
 
-Key operations:
+#### Key operations:
 
-1. Insertion:
-   - 
-2. Deletion: [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
+1. Insertion
+   
+2. Deletion
    - Node with one child: Replace the node with its child.
+   
    - Node with two children: find the minimum value in the right tree (keep traversing left), recursively delete the right child.
+   
+     [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
+
+#### Property of the tree
+
+[235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
 # 3. DFS (Depth-First Search)
 
@@ -226,6 +233,8 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
 [437.Path Sum III (Medium)](https://leetcode.com/problems/path-sum-iii/description/?envType=study-plan-v2&envId=leetcode-75)
 
 [1372.Longest ZigZag Path in a Binary Tree (Medium)](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75)
+
+[814.Binary Tree Pruning](https://leetcode.com/problems/binary-tree-pruning/description/)
 
 ### Graph
 
