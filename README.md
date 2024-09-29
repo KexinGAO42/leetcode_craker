@@ -459,7 +459,13 @@ Types of Two Pointers:
 
 [11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
 
+[581. Shortest Continuos Unsorted Subarray (Medium)](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/) => Monotonic stack
+
 #### Slow and fast pointers
+
+#### Move pointers conditionally
+
+[1868. Product of Two Run-Length Encoded Array](https://leetcode.com/problems/product-of-two-run-length-encoded-arrays/description/)
 
 ## 2. Sliding Window
 
@@ -519,6 +525,10 @@ SC: `O(N)` when we need an array to store the prefix sums / `O(1)` when we only 
 [560. Subarray Sum Equals K (Medium)](https://leetcode.com/problems/subarray-sum-equals-k/) (Combine with Sliding Window)
 
 [2483. Minimum Penalty for a Shop (Medium)](https://leetcode.com/problems/minimum-penalty-for-a-shop/)
+
+[1658. Minimum Operations to Reduce X to Zero (Medium)](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/) (Combine with two sums)
+
+
 
 # 7. Queue / Stack
 
