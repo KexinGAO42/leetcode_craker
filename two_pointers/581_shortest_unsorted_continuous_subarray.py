@@ -37,7 +37,7 @@ class Solution:
         l_pointer, r_pointer = 0, len(nums) - 1
         l_boundary, r_boundary = len(nums) - 1, 0
         while l_pointer < len(nums):
-            while l_stack and nums[l_stack[-1]] > nums[l_pointer]:  # decease
+            while l_stack and nums[l_stack[-1]] > nums[l_pointer]:  # decrease
                 l_boundary = min(l_boundary, l_stack.pop())
             l_stack.append(l_pointer)
             l_pointer += 1
