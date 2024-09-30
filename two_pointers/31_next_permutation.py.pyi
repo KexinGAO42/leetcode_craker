@@ -60,8 +60,7 @@ class Solution:
 
         if i >= 0:  # go back left and find the smallest number greater than nums[i - 1]
             j = i + 1
-            while j < len(nums) and nums[j] > nums[
-                i]:  # when the while loop breaks, we get another anchor index (j - 1) to swap
+            while j < len(nums) and nums[j] > nums[i]:  # when the while loop breaks, we get another anchor index (j - 1) to swap
                 j += 1
             self.swap(nums, i, j - 1)
         self.reverse(nums, i + 1)
