@@ -1,7 +1,20 @@
 # leetcode_craker
 This is a project tackling Leetcode questions for tech interview. Solutions comes with python
 
-# 1. Dynamic Programming
+# Algorithmic Strategies
+
+## 1. Divide-and-Conquer
+
+- Divide a larger problem into smaller problems that can be solved independently of each other.
+- The subsolutions produced by these subproblems are then combined to grenerate the overall solution of the problem.
+- Example: Apache Spark Map-Reduce.
+- It's a top-down method.
+
+## 2. Dynamic Programming
+
+- Starting with the smallest subproblem and keep on combining the solutions, until the final solution is reached.
+- Applicable when the subproblems are not independent (in contrast to Divide and Conquer).
+- It's a bottom-up method.
 
 AKA: Recursion with Memorization 记忆化搜索 / Pruning 剪枝
 
@@ -9,9 +22,10 @@ Main idea: increase space complexity to reduce time complexity. Save the interme
 
 Properties of DP problems:
 
-1. 子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题进行求解时，每次产生的子问题并不总是新问题，有些子问题会被重复计算多次。
-2. 无后效性。即子问题的解一旦确定，就不再改变，不受在这之后、包含它的更大的问题的求解决策影响。
-3. 最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质（即满足最优化原理）。
+1. Optimal Structure: 
+2. Overlapping Subproblems:
+
+
 
 When there comes a DP problem:
 
@@ -41,9 +55,9 @@ Steps for solution:
 
 5. Define the state transition functions (trickest part)
 
-## LeetCode questions
+### LeetCode questions
 
-### [Buy and Sell Stock](https://www.bilibili.com/video/BV1Lh411x7N2/?spm_id_from=333.337.search-card.all.click&vd_source=9318d4a239bca65106b4c0e0f720d724)
+#### [Buy and Sell Stock](https://www.bilibili.com/video/BV1Lh411x7N2/?spm_id_from=333.337.search-card.all.click&vd_source=9318d4a239bca65106b4c0e0f720d724)
 
 [121.Best time to buy and sell stock (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
@@ -57,15 +71,15 @@ Steps for solution:
 
 [714.Best time to buy and sell stock with transaction fee (Medium)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
-### House Robber
+#### House Robber
 
 [198.House robber (Medium)](https://leetcode.com/problems/house-robber/)
 
 [213.House robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
 
-### String
+#### String
 
-#### Multi-dimensional DP
+##### Multi-dimensional DP
 
 [5.Longest palindromic substring (Medium)](https://leetcode.com/problems/longest-palindromic-substring/description/)
 
@@ -79,17 +93,26 @@ Steps for solution:
 
 140.Word break II (Hard)
 
-### Matrix (Multi-dimensional)
+#### Matrix (Multi-dimensional)
 
-#### Bottom-up
+##### Bottom-up
 
 [64. Minimum Path Sum (Medium)](https://leetcode.com/problems/minimum-path-sum/)
 
 [120. Triangle  (Medium)](https://leetcode.com/problems/triangle/)
 
-#### Top-down
+##### Top-down
 
 [221. Maximal Square (Medium)](https://leetcode.com/problems/maximal-square/)
+
+## 3. Greedy Algorithm
+- Quickly produces a good solution, but might not be the optimal solution.
+- Like DP, mainly used to solve optimization problems where divide and conquer cannot be used.
+- Solution is calculated following a sequence of steps. At each step, a locally optimal choice is made.
+
+Conditions to use Greedy Programming
+1. Global from Local: A global optimum can be arrived at by selecting a local optimum.
+2. Optimal substructure: An optimal solution to the problem is made from optimal solutions of sub problems.
 
 # 2. Binary Search
 
