@@ -5,29 +5,28 @@ This is a project tackling Leetcode questions for tech interview. Solutions come
 
 ## 1. Divide-and-Conquer
 
-- Divide a larger problem into smaller problems that can be solved independently of each other.
+- Divide a larger problem into smaller **non-overlapping** problems that can be solved independently of each other (top-down).
 - The subsolutions produced by these subproblems are then combined to grenerate the overall solution of the problem.
-- Example: Apache Spark Map-Reduce.
-- It's a top-down method.
+- Example: 
+   - Apache Spark Map-Reduce
+   - Merge / quick sort
+   - Binary search
 
 ## 2. Dynamic Programming
 
-- Starting with the smallest subproblem and keep on combining the solutions, until the final solution is reached.
+- Starting with the smallest **overlapping** subproblem and keep on combining the solutions, until the final solution is reached (bottom-up).
 - Applicable when the subproblems are not independent (in contrast to Divide and Conquer).
-- It's a bottom-up method.
+- Two main approaches:
+   - Memoiztion (Top-Down): Solve the problem recursively, and store the results of subproblems to reuse them.
+   - Tabulation (Bottom-Up): Solve the problem iteratively, starting from the smallest subproblems and building up to the solution.
 
-AKA: Recursion with Memorization 记忆化搜索 / Pruning 剪枝
+Key Characteristics:
 
-Main idea: increase space complexity to reduce time complexity. Save the intermediate calculation results with memo hashmap to avoid calculating same thing for several times. (Fibbonacci number is a perfect and simple example.)
-
-Properties of DP problems:
-
-1. Optimal Structure: 
-2. Overlapping Subproblems:
+1. Optimal substructure and Overlapping Subproblems: the solution of a problem depends on the solutions of its subproblems.
+2. Uses additional space to store intermediate results (e.g., a hashmap or array) to avoid calculating same thing for several times.
 
 
-
-When there comes a DP problem:
+How to use DP to approach a problem:
 
 1. What is the method for bruteforce searching?
 2. How to do it recursively with Memorization?
@@ -106,15 +105,18 @@ Steps for solution:
 [221. Maximal Square (Medium)](https://leetcode.com/problems/maximal-square/)
 
 ## 3. Greedy Algorithm
-- Quickly produces a good solution, but might not be the optimal solution.
-- Like DP, mainly used to solve optimization problems where divide and conquer cannot be used.
-- Solution is calculated following a sequence of steps. At each step, a locally optimal choice is made.
+- Solves problems by making the locally optimal choice at each step, hoping that these local choices will lead to the globally optimal solution.
+- It does not backtrack or reconsider previous decisions.
+- Approach:
+   - Pick the best option available at the current step (based on a greedy criterion).
+   - Move to the next step.
+   - Repeat until the problem is solved.
 
-Conditions to use Greedy Programming
-1. Global from Local: A global optimum can be arrived at by selecting a local optimum.
-2. Optimal substructure: An optimal solution to the problem is made from optimal solutions of sub problems.
+Key Characteristics:
+1. Works when the problem exhibits the greedy choice property (making a locally optimal choice leads to a globally optimal solution).
+2. Requires a mathematical proof or reasoning to verify that the greedy approach works for a given problem.
 
-# 2. Binary Search
+# Binary Search
 
 When to use Binary Search:
 
@@ -186,7 +188,7 @@ The reason we need a data structure as BST is that, to perform deletion and inse
 
 [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
-# 3. DFS (Depth-First Search)
+# DFS (Depth-First Search)
 
 Depth-First Search (DFS) is a versatile algorithm that is commonly used to traverse or search through data structures like graphs and trees. When tackling coding questions that involve DFS, follow these general steps:
 
@@ -287,7 +289,7 @@ Depth-First Search (DFS) is a versatile algorithm that is commonly used to trave
 
 [365.Water and Jugs (Medium)](https://leetcode.com/problems/water-and-jug-problem/description/)
 
-# 4. BFS (Breadth-First Search)
+# BFS (Breadth-First Search)
 
 BFS algorithms start from a source node and visits all its neighbors before moving on to the next level of neighbors. BFS guarantees that it visits nodes in increasing order of their distance from the source node. BFS is often used to find the shortest path in an unweighted graph.
 
@@ -383,7 +385,7 @@ Binary Tree Rigth Side View (Medium)
 
 [322.Coin Change (Medium)]([322. Coin Change](https://leetcode.com/problems/coin-change/))
 
-# 5. Linked List
+# Linked List
 
 ## Code template
 
@@ -440,7 +442,7 @@ This method is usually used in problems which require: a) finding a middle node 
 
 [142. Linked List Cycle II (Medium)](https://leetcode.com/problems/linked-list-cycle-ii/)
 
-# 6. Array / String
+# Array / String
 
 ## 1. Two Pointers
 
@@ -553,7 +555,7 @@ SC: `O(N)` when we need an array to store the prefix sums / `O(1)` when we only 
 
 
 
-# 7. Queue / Stack
+# Queue / Stack
 
 ## 1. Heap / Priority Queue
 
